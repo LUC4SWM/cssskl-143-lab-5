@@ -11,7 +11,11 @@ public class SimpleColor {
     }
 
     public void setR(int r) {
-        this.r = r;
+        if((r < 0) || (r > 255)){
+            throw new ColorException();
+        } else {
+            this.r = r;
+        }
     }
 
     public int getG() {
