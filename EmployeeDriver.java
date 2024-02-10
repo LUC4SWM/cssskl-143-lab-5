@@ -18,6 +18,10 @@ public class EmployeeDriver {
 
         // TODO Build some PermanentHire and Consultant objects here
         // and add them to the ArrayList below
+        PermanentHire emp6 = new PermanentHire("MARK",987654321);
+        PermanentHire emp7 = new PermanentHire("CARY",192837465,4000);
+
+
 
         // Build a set of workers, all of which are employees
         ArrayList<Employee> myEmployees = new ArrayList<Employee>();
@@ -28,10 +32,16 @@ public class EmployeeDriver {
         myEmployees.add(emp4);
         myEmployees.add(emp5);
         // TODO Add a sixth and seventh employee to this list that you create
-
+        myEmployees.add(emp6);
+        myEmployees.add(emp7);
         // This code doesn't need to change, even if you add ten new employee classes and
         // add 102 new employees - this is an example of the generic code that can be written
         // when inheritance hierarchies are in use.
+
+        /* 4.7 RESPONSE: ColorWithAlpha s = new ColorWithAlpha(255,0,255,10);
+        myEmployees.add(s);
+        If i try adding this ColorWithAlpha to the ArrayList of employees and running it, I get an error message saying "incompatible types" because the ArrayList is only set up to take Employee objects or objects from Employee's subclasses.
+        */
         for (int i = 0; i < myEmployees.size(); i++) {
             Employee current = myEmployees.get(i);
             System.out.println(current.getName() + " makes " + current.calculateWeeklyPay() + " per week.");
