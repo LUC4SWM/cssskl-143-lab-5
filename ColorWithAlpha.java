@@ -1,5 +1,5 @@
 public class ColorWithAlpha extends SimpleColor{
-    private int alpha; // between 0-255
+     int alpha; // between 0-255
 
     public int getAlpha() {
         return alpha;
@@ -26,10 +26,11 @@ public class ColorWithAlpha extends SimpleColor{
     }
 
     @Override
-    public boolean equals(ColorWithAlpha obj) {
-        if (obj != null && obj.getClass() == getClass()){
-            return super.equals(obj) && alpha == ((ColorWithAlpha) )
+    public boolean equals(Object obj) {
+        if (obj instanceof ColorWithAlpha){
+            return super.equals(obj) && alpha == ((ColorWithAlpha) obj).getAlpha();
         }
         return false;
     }
+
 }

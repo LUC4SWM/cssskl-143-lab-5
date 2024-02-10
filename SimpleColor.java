@@ -1,7 +1,7 @@
 // TODO If you use this class because you dont have your
 // previous SimpleColor, you must document the code with comments
 // and fix the setters so they don't invalidate the [0-255] rule.
-public class SimpleColor {
+public abstract class SimpleColor {
     private int r;
     private int g;
     private int b;
@@ -23,7 +23,11 @@ public class SimpleColor {
     }
 
     public void setG(int g) {
-        this.g = g;
+        if((g < 0) || (g > 255)){
+            throw new ColorException();
+        } else {
+            this.g = g;
+        }
     }
 
     public int getB() {
@@ -31,7 +35,11 @@ public class SimpleColor {
     }
 
     public void setB(int b) {
-        this.b = b;
+        if((b < 0) || (b > 255)){
+            throw new ColorException();
+        } else {
+            this.b = b;
+        }
     }
 
     public void setColor(int a, int b, int c) {
@@ -52,4 +60,19 @@ public class SimpleColor {
     public SimpleColor(SimpleColor other) {
         this(other.r, other.g, other.b);
     }
+
+    public String toString() {
+        return "RGB: (" + getR() + ", " + getG() + ", " + getB() + ")";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj.getClass() == getClass()){
+            return r == ((SimpleColor) obj).getR() && g == ((SimpleColor) obj).getG() && b == ((SimpleColor) obj).getB();
+        }
+
+        return false;
+    }
+
+
 }
