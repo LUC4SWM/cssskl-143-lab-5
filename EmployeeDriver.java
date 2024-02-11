@@ -18,8 +18,8 @@ public class EmployeeDriver {
 
         // TODO Build some PermanentHire and Consultant objects here
         // and add them to the ArrayList below
-        PermanentHire emp6 = new PermanentHire("MARK",987654321);
-        PermanentHire emp7 = new PermanentHire("CARY",192837465,4000);
+        PermanentHire emp6 = new PermanentHire("CARY",192837465,4000);
+        Consultant emp7 = new Consultant("YVES", 123456432, 40);
 
 
 
@@ -38,10 +38,11 @@ public class EmployeeDriver {
         // add 102 new employees - this is an example of the generic code that can be written
         // when inheritance hierarchies are in use.
 
-        /* 4.7 RESPONSE: ColorWithAlpha s = new ColorWithAlpha(255,0,255,10);
+        /* 4.7/5.5 RESPONSES: ColorWithAlpha s = new ColorWithAlpha(255,0,255,10);
         myEmployees.add(s);
-        If i try adding this ColorWithAlpha to the ArrayList of employees and running it, I get an error message saying "incompatible types" because the ArrayList is only set up to take Employee objects or objects from Employee's subclasses.
+        If i try adding this ColorWithAlpha to the ArrayList of employees and running it, I get an error message saying "incompatible types" because the ArrayList is only set up to take Employee objects or objects from Employee's subclasses. Same issue rises when I try adding a color exception to the ArrayList. If I want it to store both color exceptions and employees, I would need to change how the ArrayList is declared so it's type is set to a class that both classes extend, so probably the Object class.
         */
+
         for (int i = 0; i < myEmployees.size(); i++) {
             Employee current = myEmployees.get(i);
             System.out.println(current.getName() + " makes " + current.calculateWeeklyPay() + " per week.");
