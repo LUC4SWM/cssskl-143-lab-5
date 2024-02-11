@@ -75,7 +75,7 @@ class PolyDemo extends JFrame {
             /********************************
              * Polymorphic extensibility demo
              *******************************/
-            switch ((int) (Math.random() * 4)) {
+            switch (2 /*(int) (Math.random() * 4)*/) {
                 case 0:
                     retVal = new Spray(x, y); // new Square(x, y, getRandInt(), getRandInt());
                     break;
@@ -83,7 +83,7 @@ class PolyDemo extends JFrame {
                     retVal = new Spray(x, y); // Cube(x, y, getRandInt(), getRandInt(), getRandInt());
                     break;
                 case 2:
-                    retVal = new Spray(x, y);
+                    retVal = new RightTriangle(x, y, getRandInt(), getRandInt());
                     break;
                 case 3:
                     retVal =  new Circle(x, y, getRandInt()); // new Cylinder(x, y, getRandInt(), getRandInt());
